@@ -1,0 +1,24 @@
+{
+  "name": "le-curseur-mon-espace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prototype PWA securise pour Le Curseur - Mon espace",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "test": "npm run test -w backend && npm run test -w frontend",
+    "lint": "npm run lint -w backend && npm run lint -w frontend",
+    "db:init": "npm run db:init -w backend",
+    "db:check": "npm run db:check -w backend",
+    "db:backup": "npm run db:backup -w backend --"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
+
